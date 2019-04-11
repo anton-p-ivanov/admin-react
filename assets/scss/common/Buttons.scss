@@ -1,0 +1,107 @@
+@import "../includes/variables";
+
+$button-colors: (
+    info: (background-color: $color-info, color: $color-white),
+    success: (background-color: $color-success, color: $color-white),
+    warning: (background-color: $color-warning, color: $color-white),
+    danger: (background-color: $color-danger, color: $color-white),
+    primary: (
+            background-color: $color-primary,
+            background-image: linear-gradient(to bottom, lighten($color-primary, 5), darken($color-primary, 5)),
+            color: $color-white,
+            border-color: darken($color-primary, 5),
+            border-bottom-color: darken($color-primary, 10)
+    ),
+    default: (
+            background-color: $color-white,
+            background-image: linear-gradient(to bottom, $color-white, darken($color-white, 10)),
+            color: $color-black,
+            border-color: $color-gray-medium,
+            border-bottom-color: darken($color-gray-medium, 10)
+    )
+);
+
+.btn {
+    display: inline-block;
+    background-color: transparent;
+    background-repeat: repeat-x;
+    border: solid 2px transparent;
+    border-radius: 4px;
+    padding: .625rem 1rem;
+    line-height: 1;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: border-color .1s ease-in-out, box-shadow .1s ease-in-out, background-color .1s ease-in-out;
+
+    @each $status, $color-map in $button-colors {
+        &--#{$status} {
+            @each $property, $color in $color-map {
+                #{$property}: $color;
+            }
+
+            &:hover,
+            &:active {
+                background-color: darken(map_get($color-map, 'background-color'), 10%);
+                @if map_has_key($color-map, 'border-color') {
+                    border-color: darken(map_get($color-map, 'border-color'), 10%);
+                }
+            }
+
+            &:focus {
+                box-shadow: inset 0 2px 4px rgba($color-black, .15), 0 0 0 4px rgba(map_get($color-map, 'background-color'), .25);
+            }
+        }
+    }
+
+    &--block {
+        display: block;
+        width: 100%;
+    }
+
+    &--icon {
+        fill: $color-black;
+        display: block;
+        padding: .375rem;
+    }
+
+    &--disabled,
+    &:disabled {
+        background-color: $color-gray-light;
+        border-color: lighten($color-gray-medium, 10%);
+        cursor: default;
+
+        &:hover,
+        &:active {
+            background-color: $color-gray-light;
+            border-color: lighten($color-gray-medium, 10%);
+        }
+        
+        &:focus {
+            box-shadow: none;
+        }
+
+        & path {
+            fill: $color-gray-medium;
+        }
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+        text-decoration: none;
+        outline: 0;
+    }
+}
+
+.btn-group {
+    display: flex;
+    margin-right: .5rem;
+
+    &__item {
+        margin-right: 4px;
+    }
+
+    &:last-child {
+        margin-right: 0;
+    }
+}

@@ -1,0 +1,51 @@
+@import "../includes/variables";
+
+.tabs-nav {
+    display: flex;
+
+    &__item {
+        padding: .625rem 1rem;
+        border: solid 2px transparent;
+        margin-right: -2px;
+        border-radius: .25rem .25rem 0 0;
+        color: $color-gray-dark;
+
+        &:hover,
+        &:focus,
+        &:active {
+            text-decoration: none;
+            color: $color-black;
+        }
+
+        &--active {
+            background-color: $color-gray-light;
+            border-color: $color-gray-medium;
+            border-bottom-color: $color-gray-light;
+            color: $color-black;
+        }
+    }
+}
+
+.tabs {
+    &__nav {
+        z-index: 100;
+    }
+
+    &__content {
+        z-index: 50;
+        min-height: 100px;
+        background-color: $color-gray-light;
+        border: solid 2px $color-gray-medium;
+        border-radius: 0 .25rem .25rem .25rem;
+        margin-top: -2px;
+        padding: 1rem;
+    }
+    //
+    //&__pane {
+    //    display: none;
+    //
+    //    &--active {
+    //        display: block;
+    //    }
+    //}
+}

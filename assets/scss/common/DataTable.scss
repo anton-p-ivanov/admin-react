@@ -1,0 +1,128 @@
+@import "../includes/variables";
+@import "../includes/mixins";
+
+.data-table {
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+    table-layout: fixed;
+
+    &__head {
+        border-bottom: solid 2px $color-gray-medium;
+    }
+
+    &__body {
+        &--panel {
+            background-color: $color-white;
+            border: solid 1px $color-gray-medium;
+        }
+    }
+
+    &__row {
+        border-bottom: solid 1px $color-gray-medium;
+
+        &--alt {
+            background-color: $color-gray-light;
+        }
+
+        &--selected {
+            background-color: lighten($color-info, 50%);
+        }
+
+        &--hovered {
+            background-color: $color-gray-light;
+        }
+    }
+
+    &__item {
+        text-align: left;
+        padding: .625rem 1rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        &--center,
+        &--boolean {
+            text-align: center;
+        }
+
+        &--right {
+            text-align: right;
+        }
+
+        &--head {
+            font-weight: 500;
+        }
+
+        &--icon {
+            padding: 0;
+        }
+
+        &--icon > svg,
+        &--dropdown svg {
+            fill: $color-gray-dark;
+            margin: auto;
+        }
+
+        &--dropdown {
+            overflow: visible;
+            padding: 0;
+            margin-top: -.5rem;
+            margin-bottom: -.5rem;
+
+            &:hover {
+                & svg {
+                    fill: $color-black;
+                }
+            }
+        }
+    }
+
+    &__sort {
+        display: inline-block;
+        color: $color-black;
+        text-decoration: none;
+        background-repeat: no-repeat;
+        background-position: right center;
+        padding-right: 2rem;
+
+        &:hover {
+            @include sort-svg('asc');
+            text-decoration: none;
+        }
+
+        &--asc {
+            @include sort-svg('asc');
+
+            &:hover {
+                @include sort-svg('desc');
+            }
+        }
+
+        &--desc {
+            @include sort-svg('desc');
+        }
+    }
+
+    &__placeholder {
+        display: block;
+        border-radius: .25rem;
+        height: $line-height-base;
+        background-color: $color-gray-light;
+    }
+}
+//
+//.grid-path {
+//    display: flex;
+//    justify-content: space-between;
+//    background-color: $color-gray-light;
+//    margin: 1rem 0;
+//    padding: .5rem 1rem;
+//
+//    &__item {
+//        &--right {
+//            font-size: $font-size-sm;
+//            color: $color-gray-medium;
+//        }
+//    }
+//}

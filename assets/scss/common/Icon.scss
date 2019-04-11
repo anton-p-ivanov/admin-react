@@ -1,0 +1,11 @@
+@import "../includes/variables";
+
+.icon {
+  margin: auto;
+  width: 24px;
+  height: 24px;
+
+  & path {
+    fill: $color-black;
+  }
+}

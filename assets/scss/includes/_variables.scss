@@ -1,0 +1,36 @@
+/**
+ * Font
+ */
+$font-size-base: 16px;
+$font-size-sm: .875rem;
+
+/**
+ * Text line height
+ */
+$line-height-base: 1.5rem;
+$line-height-sm: $line-height-base * .875;
+
+/**
+ * Colors
+ */
+$color-info: #0f52ba;
+$color-success: #28a745;
+$color-warning: #fd7e14;
+$color-danger: #dc3545;
+
+$color-primary: $color-warning;
+
+$color-white: #ffffff;
+$color-gray-light: #f0f0f0;
+$color-gray-medium: #b0b5bf;
+$color-gray-dark: #70757f;
+$color-black: #30353f;
+
+$color-text-body: $color-black;
+
+/**
+ * Grid
+ */
+$grid-gutter-width: 1rem;
+$grid-columns: 5;
+$grid-flex-basis: 100% / $grid-columns;

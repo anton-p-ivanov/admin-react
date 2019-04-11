@@ -1,0 +1,179 @@
+@import url("https://fonts.googleapis.com/css?family=Rubik:400,400i,500");
+@import "~normalize.css";
+@import "includes/variables";
+
+#react-container {
+    min-height: 100%;
+    display: flex;
+}
+
+body {
+    background-color: $color-gray-light;
+    color: $color-text-body;
+    font-family: "Rubik", "Helvetica Neue", "Arial", sans-serif;
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+svg {
+    display: block;
+}
+
+a {
+    color: $color-info;
+    text-decoration: none;
+
+    &:focus,
+    &:hover,
+    &:active {
+        text-decoration: underline;
+    }
+}
+
+p {
+    margin: 0 0 1rem;
+}
+
+h1, h2, h3 {
+    margin: 0 0 1rem;
+    font-weight: normal;
+}
+
+h1 {
+    font-size: 1.5rem;
+}
+
+h2 {
+    font-size: 1.25rem;
+}
+
+h3 {
+    font-size: 1rem;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    overflow: hidden;
+    border: none;
+    background-color: $color-gray-medium;
+    margin: 1rem 0;
+}
+
+.page {
+    min-width: 100%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    &__header {
+        flex: 0 0 auto;
+        height: 3.5rem;
+        padding: 0 1rem;
+    }
+
+    &__content {
+        display: flex;
+        flex: 1 0 auto;
+        background-color: $color-white;
+        border-top: solid 2px $color-gray-medium;
+        border-bottom: solid 2px $color-gray-medium;
+    }
+
+    &__footer {
+        flex-shrink: 0;
+        color: $color-gray-dark;
+        font-size: $font-size-sm;
+        padding: .5rem 1rem;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+    &__title {
+        font-size: 1.5rem;
+        font-weight: 400;
+        letter-spacing: -.03rem;
+        margin: .5rem 0 1.5rem;
+        line-height: 1;
+    }
+}
+
+.content {
+    display: flex;
+    width: 100%;
+
+    &__nav {
+        flex: 1 0 auto;
+        padding: 1rem;
+        width: 25%;
+        height: 100%;
+        min-width: 150px;
+        max-width: 250px;
+        background-color: $color-gray-dark;
+    }
+
+    &__main {
+        padding: 1rem;
+        flex: 1 1 auto;
+    }
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &__title {
+        font-size: 1.5rem;
+        color: $color-gray-dark;
+    }
+}
+
+.navbar {
+    color: $color-gray-dark;
+    display: flex;
+
+    &__group {
+        padding: 0;
+    }
+}
+
+.text {
+    &--muted {
+        color: $color-gray-medium;
+    }
+}
+
+.list-view {
+    position: relative;
+
+    &__backdrop {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1000;
+        background: rgba($color-white, .5);
+        display: none;
+
+        &--active {
+            display: block;
+        }
+    }
+}

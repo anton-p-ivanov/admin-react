@@ -1,0 +1,68 @@
+@import "../includes/variables";
+@import "../includes/mixins";
+
+.checkbox {
+  display: flex;
+  align-items: start;
+  position: relative;
+  padding-right: 1rem;
+  // @todo disabled next line for styling checkboxes in table
+  //margin-bottom: .5rem;
+
+  // @todo disabled next line for styling checkboxes in table
+  //&--table {
+  //    padding: 0;
+  //    margin: 0;
+  //}
+
+  //noinspection CssUnknownProperty
+  &__input {
+    @include checkbox-svg(false, $color-gray-medium);
+    flex: 0 0 24px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+
+    &:hover {
+      @include checkbox-svg(false, $color-black);
+    }
+
+    &:checked {
+      @include checkbox-svg(true, $color-black);
+
+      &:disabled {
+        @include checkbox-svg(true, $color-gray-medium);
+      }
+    }
+
+    &:disabled {
+      @include checkbox-svg(false, $color-gray-medium);
+      cursor: default;
+    }
+
+    &:active,
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__label {
+    // @todo disabled next line for styling checkboxes in table
+    //margin-left: 1rem;
+    display: flex; //
+
+    // @todo disabled next line for styling checkboxes in table
+    //&--table {
+    //    margin-left: 0;
+    //}
+  }
+
+  &__help {
+    font-size: $font-size-sm;
+    line-height: 1.3;
+    color: $color-gray-dark;
+  }
+}

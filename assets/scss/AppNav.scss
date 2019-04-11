@@ -1,0 +1,33 @@
+@import "includes/variables";
+
+.app-nav {
+    margin-left: -1rem;
+    margin-right: -1rem;
+
+    &__group {
+        margin-bottom: 1rem;
+    }
+
+    &__item {
+        display: block;
+        color: $color-white;
+        padding: .25rem 1rem;
+        border-left: solid .25rem transparent;
+
+        &:hover,
+        &:active,
+        &:focus,
+        &--active,
+        &--active:hover {
+            background-color: $color-white;
+            color: $color-black;
+            text-decoration: none;
+            border-color: $color-primary;
+        }
+
+        &:hover {
+            background-color: $color-gray-medium;
+            border-color: transparent;
+        }
+    }
+}
